@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RRK Law FAQ Hub</title>
     <style>
+        :root {
+            --bg-charcoal: #2d2b2a;
+            --card-slate: #555759;
+            --card-slate-top: #5a5d60;
+            --card-slate-bottom: #4f5254;
+            --border-ink: #1b1b1a;
+            --text-silver: #e8e8e8;
+            --text-muted: #a1a2a2;
+            --btn-fill: #bdbdbd;
+            --btn-text: #111111;
+            --icon-silver: #c7c7c7;
+        }
         body {
             font-family: Arial, sans-serif;
             background: url('rrk-law-building.png') no-repeat center center fixed;
             background-size: cover;
-            color: #F0F0F0;
+            color: var(--text-silver);
             margin: 0;
             padding: 40px 20px;
             line-height: 1.6;
@@ -22,52 +34,87 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 26, 26, 0.85);
+            background: rgba(45, 43, 42, 0.65);
             z-index: -1;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         h1 {
-            color: #BDBDBD;
+            color: var(--text-silver);
             font-size: 2.5em;
             margin-bottom: 10px;
             text-align: center;
+            font-weight: 700;
         }
         .subtitle {
-            color: #BDBDBD;
+            color: var(--text-muted);
             text-align: center;
             font-size: 1.2em;
             margin-bottom: 40px;
+            font-weight: 400;
         }
         .faq-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
             margin-top: 30px;
         }
         .faq-card {
-            background-color: #555759;
-            padding: 30px;
-            border-radius: 8px;
+            background: linear-gradient(180deg, var(--card-slate-top) 0%, var(--card-slate-bottom) 100%);
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid var(--border-ink);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
             text-decoration: none;
-            color: #F0F0F0;
-            transition: all 0.3s;
-            border: 2px solid transparent;
+            color: var(--text-silver);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         .faq-card:hover {
-            border-color: #BDBDBD;
-            transform: translateY(-5px);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+        .faq-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .faq-card-icon {
+            font-size: 40px;
+            color: var(--icon-silver);
+            line-height: 1;
         }
         .faq-card h2 {
-            color: #BDBDBD;
-            margin-top: 0;
-            font-size: 1.5em;
+            color: var(--text-silver);
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
         }
         .faq-card p {
-            margin-bottom: 0;
-            color: #c0c0c0;
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        .view-all-btn {
+            background-color: var(--btn-fill);
+            color: var(--btn-text);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .view-all-btn:hover {
+            background-color: #a8a8a8;
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -77,27 +124,39 @@
         <div class="subtitle">Frequently Asked Questions</div>
 
         <div style="text-align: center; margin-bottom: 30px;">
-            <a href="/all-faqs.html" style="background-color: #BDBDBD; color: #1a1a1a; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em;">View All FAQ Topics</a>
+            <a href="/all-faqs.html" class="view-all-btn">View All FAQ Topics</a>
         </div>
 
         <div class="faq-grid">
             <a href="/divorce.html" class="faq-card">
-                <h2>Divorce</h2>
+                <div class="faq-card-header">
+                    <span class="faq-card-icon">⚖</span>
+                    <h2>Divorce</h2>
+                </div>
                 <p>Texas divorce law, community property, alimony, and more</p>
             </a>
 
             <a href="/personal-injury.html" class="faq-card">
-                <h2>Personal Injury</h2>
+                <div class="faq-card-header">
+                    <span class="faq-card-icon">🛡</span>
+                    <h2>Personal Injury</h2>
+                </div>
                 <p>Car accidents, claims, settlements</p>
             </a>
 
             <a href="/criminal-defense.html" class="faq-card">
-                <h2>Criminal Defense</h2>
+                <div class="faq-card-header">
+                    <span class="faq-card-icon">⚖</span>
+                    <h2>Criminal Defense</h2>
+                </div>
                 <p>Drug charges, DWI, assault, and more</p>
             </a>
 
             <a href="/family-law.html" class="faq-card">
-                <h2>Family Law</h2>
+                <div class="faq-card-header">
+                    <span class="faq-card-icon">🏛</span>
+                    <h2>Family Law</h2>
+                </div>
                 <p>Child custody, modifications, enforcement</p>
             </a>
         </div>

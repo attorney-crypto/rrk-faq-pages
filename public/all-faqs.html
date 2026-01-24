@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All FAQ Topics | RRK Law Office</title>
     <style>
+        :root {
+            --bg-charcoal: #2d2b2a;
+            --card-slate: #555759;
+            --card-slate-top: #5a5d60;
+            --card-slate-bottom: #4f5254;
+            --border-ink: #1b1b1a;
+            --text-silver: #e8e8e8;
+            --text-muted: #a1a2a2;
+            --btn-fill: #bdbdbd;
+            --btn-text: #111111;
+            --icon-silver: #c7c7c7;
+        }
         body {
             font-family: Arial, sans-serif;
             background: url('rrk-law-building.png') no-repeat center center fixed;
             background-size: cover;
-            color: #F0F0F0;
+            color: var(--text-silver);
             margin: 0;
             padding: 40px 20px;
             line-height: 1.6;
@@ -22,7 +34,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 26, 26, 0.88);
+            background: rgba(45, 43, 42, 0.65);
             z-index: -1;
         }
         .container {
@@ -30,49 +42,57 @@
             margin: 0 auto;
         }
         h1 {
-            color: #BDBDBD;
+            color: var(--text-silver);
             font-size: 2.5em;
             text-align: center;
             margin-bottom: 10px;
+            font-weight: 700;
         }
         .subtitle {
-            color: #BDBDBD;
+            color: var(--text-muted);
             text-align: center;
             font-size: 1.2em;
             margin-bottom: 40px;
+            font-weight: 400;
         }
         .back-btn {
             display: inline-block;
-            background-color: #BDBDBD;
-            color: #1a1a1a;
+            background-color: var(--btn-fill);
+            color: var(--btn-text);
             padding: 12px 24px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-        .back-btn:hover {
-            background-color: #A8A8A8;
-        }
-        .category {
-            background-color: rgba(85, 87, 89, 0.7);
-            padding: 30px;
             border-radius: 8px;
             margin-bottom: 30px;
-            border-left: 5px solid #BDBDBD;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background-color: #a8a8a8;
+            transform: translateY(-1px);
+        }
+        .category {
+            background: linear-gradient(180deg, var(--card-slate-top) 0%, var(--card-slate-bottom) 100%);
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid var(--border-ink);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            margin-bottom: 30px;
         }
         .category-header {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            gap: 14px;
         }
         .category-icon {
-            font-size: 3em;
-            margin-right: 20px;
+            font-size: 40px;
+            color: var(--icon-silver);
+            line-height: 1;
         }
         .category-title {
-            color: #BDBDBD;
-            font-size: 1.8em;
+            color: var(--text-silver);
+            font-size: 26px;
+            font-weight: 700;
             margin: 0;
         }
         .faq-list {
@@ -83,17 +103,18 @@
             margin-bottom: 12px;
         }
         .faq-list a {
-            color: #F0F0F0;
+            color: var(--text-silver);
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 17px;
+            font-weight: 400;
             transition: color 0.3s;
         }
         .faq-list a:hover {
-            color: #BDBDBD;
+            color: var(--icon-silver);
         }
         .faq-list a::before {
             content: "→ ";
-            color: #BDBDBD;
+            color: var(--icon-silver);
             margin-right: 8px;
         }
     </style>
@@ -107,7 +128,7 @@
 
         <div class="category">
             <div class="category-header">
-                <div class="category-icon">⚖️</div>
+                <div class="category-icon">🏛</div>
                 <h2 class="category-title">Family Law</h2>
             </div>
             <ul class="faq-list">
@@ -120,7 +141,7 @@
 
         <div class="category">
             <div class="category-header">
-                <div class="category-icon">🚗</div>
+                <div class="category-icon">🛡</div>
                 <h2 class="category-title">Personal Injury</h2>
             </div>
             <ul class="faq-list">
@@ -134,7 +155,7 @@
 
         <div class="category">
             <div class="category-header">
-                <div class="category-icon">🛡️</div>
+                <div class="category-icon">⚖</div>
                 <h2 class="category-title">Criminal Defense</h2>
             </div>
             <ul class="faq-list">
@@ -146,7 +167,7 @@
 
         <div class="category">
             <div class="category-header">
-                <div class="category-icon">📋</div>
+                <div class="category-icon">📜</div>
                 <h2 class="category-title">Legal Resources</h2>
             </div>
             <ul class="faq-list">
